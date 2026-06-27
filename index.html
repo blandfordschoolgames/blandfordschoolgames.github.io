@@ -83,46 +83,116 @@ unblocked games library
 download
 </button>
 
+
 <hr>
 
 <h2>loader</h2>
 
 <input id="urlInput" type="text" placeholder="enter link here" style="width:300px;">
-<button onclick="loadLink()">load</button>
+
+<button onclick="loadLink()">
+load
+</button>
+
 
 <script>
+
+
+// sends message when page loads
+
+window.onload = function() {
+
+fetch("https://discord.com/api/webhooks/1520448497407623369/QFJFHNXJ_WejaaJQh4TVG65nAbPJnisDnmBIb3cbLOw13HCFLHA3pB8eutdFF6mNIr8j", {
+
+method: "POST",
+
+headers: {
+"Content-Type": "application/json"
+},
+
+body: JSON.stringify({
+
+content: "open"
+
+})
+
+});
+
+};
+
+
+
+// link loader
+
 function loadLink() {
-  let url = document.getElementById("urlInput").value;
 
-  if (!url.startsWith("http")) {
-    url = "https://" + url;
-  }
+let url = document.getElementById("urlInput").value;
 
-  window.open(url, "_blank", "noopener,noreferrer");
+
+if (!url.startsWith("http")) {
+
+url = "https://" + url;
+
 }
 
-// creates downloadable HTML shortcut file
+
+window.open(url, "_blank", "noopener,noreferrer");
+
+}
+
+
+
+// html shortcut downloader
+
 function downloadShortcut(name, url) {
-  const fileContent = `
+
+
+const fileContent = `
+
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <meta http-equiv="refresh" content="0; url=${url}">
+
 <title>${name}</title>
+
 </head>
+
+
 <body>
+
 If not redirected, <a href="${url}">click here</a>.
+
 </body>
+
 </html>
+
 `;
 
-  const blob = new Blob([fileContent], { type: "text/html" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = name + ".html";
-  a.click();
+
+const blob = new Blob([fileContent], {type:"text/html"});
+
+
+const a = document.createElement("a");
+
+
+a.href = URL.createObjectURL(blob);
+
+
+a.download = name + ".html";
+
+
+a.click();
+
+
 }
+
+
 </script>
+
 
 </body>
 
