@@ -2,174 +2,226 @@
 <html>
 
 <head>
-<title>‎ </title>
+<title>Atlas Loader</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="atlas.png">
+
+<!-- JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* FORCE FONT FOR EVERYTHING */
+* {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+body {
+  margin: 0;
+  background: #0d0d0d;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* main container */
+.container {
+  width: 700px;
+}
+
+/* header */
+.header {
+  background: #0f0f0f;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.header p {
+  margin: 6px 0 0 0;
+  opacity: 0.7;
+}
+
+/* sections */
+.section {
+  background: #0f0f0f;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+/* buttons */
+button {
+  background: #0a0a0a;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  margin: 5px 5px 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0f0f0f;
+}
+
+/* input */
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 60%;
+  margin-right: 10px;
+  background: #0a0a0a;
+  color: white;
+}
+
+/* light mode */
+.light {
+  background: #f2f2f2;
+  color: black;
+}
+
+.light .header,
+.light .section {
+  background: white;
+  color: black;
+}
+
+.light button {
+  background: #e0e0e0;
+  color: black;
+}
+
+.light button:hover {
+  background: #d0d0d0;
+}
+
+.light input {
+  background: #f0f0f0;
+  color: black;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>games</h1>
+<div class="container">
 
-<p>click the game title to play them</p>
+<!-- HEADER -->
+<div class="header">
+  <h1>Atlas Loader</h1>
+  <p>Game and website loader</p>
+</div>
 
-<hr>
+<!-- GAMES -->
+<div class="section">
+<h2>Games</h2>
 
-<h2>play</h2>
+<button onclick="window.open('https://d1tm91r4ytbt54.cloudfront.net/2779cbcb-a02f-48a3-9e2e-95a8d123d165/1685483461665/web/index.html','_blank')">Minecraft</button>
+<button onclick="downloadShortcut('minecraft','https://d1tm91r4ytbt54.cloudfront.net/...')">Download</button>
+<br>
 
-<button onclick="window.open('https://d1tm91r4ytbt54.cloudfront.net/2779cbcb-a02f-48a3-9e2e-95a8d123d165/1685483461665/web/index.html', '_blank')">
-minecraft
-</button>
+<button onclick="window.open('https://slopenexus.github.io/games/19-04v2.1/index.html','_blank')">Fixed Slope</button>
+<button onclick="downloadShortcut('slope','https://slopenexus.github.io/games/19-04v2.1/index.html')">Download</button>
+<br>
 
-<button onclick="downloadShortcut('minecraft','https://d1tm91r4ytbt54.cloudfront.net/2779cbcb-a02f-48a3-9e2e-95a8d123d165/1685483461665/web/index.html')">
-download
-</button>
+<button onclick="window.open('https://scratch.mit.edu/projects/818748698/fullscreen/','_blank')">Starship</button>
+<button onclick="downloadShortcut('starship','https://scratch.mit.edu/projects/818748698/fullscreen/')">Download</button>
+<br>
 
-<br><br>
+<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/new-games/level-67?authuser=0','_blank')">Geometry Dash</button>
+<button onclick="downloadShortcut('geometry dash','https://sites.google.com/view/drive-u-7-home/new-games/level-67?authuser=0')">Download</button>
+<br>
 
-<button onclick="window.open('https://slopenexus.github.io/games/19-04v2.1/index.html', '_blank')">
-slope (no bugs)
-</button>
+<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/renny?authuser=0','_blank')">Granny</button>
+<button onclick="downloadShortcut('granny','https://sites.google.com/view/drive-u-7-home/renny?authuser=0')">Download</button>
+<br>
 
-<button onclick="downloadShortcut('slope','https://slopenexus.github.io/games/19-04v2.1/index.html')">
-download
-</button>
+<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/gta?authuser=0','_blank')">GTA 7</button>
+<button onclick="downloadShortcut('gta','https://sites.google.com/view/drive-u-7-home/gta?authuser=0')">Download</button>
+<br>
 
-<br><br>
+<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/home','_blank')">Game Library</button>
+<button onclick="downloadShortcut('games library','https://sites.google.com/view/drive-u-7-home/home')">Download</button>
 
-<button onclick="window.open('https://scratch.mit.edu/projects/818748698/fullscreen/', '_blank')">
-starship
-</button>
+</div>
 
-<button onclick="downloadShortcut('starship','https://scratch.mit.edu/projects/818748698/fullscreen/')">
-download
-</button>
+<!-- LOADER -->
+<div class="section">
+<h2>Website Loader</h2>
 
-<br><br>
+<input id="urlInput" type="text" placeholder="enter link here">
+<button onclick="loadLink()">load</button>
 
-<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/new-games/level-67?authuser=0', '_blank')">
-geometry dash ripoff
-</button>
+</div>
 
-<button onclick="downloadShortcut('geometry dash','https://sites.google.com/view/drive-u-7-home/new-games/level-67?authuser=0')">
-download
-</button>
+<!-- SETTINGS -->
+<div class="section">
+<h2>Settings</h2>
 
-<br><br>
+<button onclick="toggleTheme()">light mode</button>
 
-<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/renny?authuser=0', '_blank')">
-granny ripoff
-</button>
+</div>
 
-<button onclick="downloadShortcut('granny','https://sites.google.com/view/drive-u-7-home/renny?authuser=0')">
-download
-</button>
-
-<br><br>
-
-<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/gta?authuser=0', '_blank')">
-gta??
-</button>
-
-<button onclick="downloadShortcut('gta','https://sites.google.com/view/drive-u-7-home/gta?authuser=0')">
-download
-</button>
-
-<br><br>
-
-<button onclick="window.open('https://sites.google.com/view/drive-u-7-home/home', '_blank')">
-unblocked games library
-</button>
-
-<button onclick="downloadShortcut('games library','https://sites.google.com/view/drive-u-7-home/home')">
-download
-</button>
-
-
-<hr>
-
-<h2>loader</h2>
-
-<input id="urlInput" type="text" placeholder="enter link here" style="width:300px;">
-
-<button onclick="loadLink()">
-load
-</button>
-
+</div>
 
 <script>
 
-
-
-// link loader
-
+// loader
 function loadLink() {
+  let url = document.getElementById("urlInput").value;
 
-let url = document.getElementById("urlInput").value;
+  if (!url.startsWith("http")) {
+    url = "https://" + url;
+  }
 
-
-if (!url.startsWith("http")) {
-
-url = "https://" + url;
-
+  window.open(url, "_blank", "noopener,noreferrer");
 }
 
-
-window.open(url, "_blank", "noopener,noreferrer");
-
-}
-
-
-
-// html shortcut downloader
-
+// shortcut downloader
 function downloadShortcut(name, url) {
-
-
-const fileContent = `
-
+  const fileContent = `
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta http-equiv="refresh" content="0; url=${url}">
-
 <title>${name}</title>
-
 </head>
-
-
 <body>
-
 If not redirected, <a href="${url}">click here</a>.
-
 </body>
-
 </html>
-
 `;
 
-
-const blob = new Blob([fileContent], {type:"text/html"});
-
-
-const a = document.createElement("a");
-
-
-a.href = URL.createObjectURL(blob);
-
-
-a.download = name + ".html";
-
-
-a.click();
-
-
+  const blob = new Blob([fileContent], {type:"text/html"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name + ".html";
+  a.click();
 }
 
+// theme toggle
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
 
 </script>
-
 
 </body>
 
